@@ -1,0 +1,153 @@
+/*Estilização do BODY da página*/
+body{
+    margin: 0;
+    border: 0;
+    font-family: "Helvetica";
+    background-color: #e5e5e8;
+}
+/*Estização do HEADER da página*/
+header{
+    background-color: rgb(21, 32, 70);
+    padding: 30px 0 30px 250px;
+    height: 60px;
+}
+
+.logo {
+    width: 20%;
+    margin-left: -250;
+    margin-top: -80;
+}
+/*Estilização do MENU do site*/
+nav {
+    color: white;
+    font-size: 28;
+    right: 100px;
+    top: 40px;
+    position: absolute;
+    margin-right: -160;
+    margin-top: -65;
+    
+   }
+
+nav li{
+    display: inline;
+    margin-right: 80px;
+    font-family: cursive;
+    font-size: 35px;
+    font-family: "Helvetica";
+    gap: 30px
+}
+nav li a{
+    color: white;
+    text-decoration: none;
+}
+
+/*Estilização da DIV do header */
+.divHeader {
+    position: relative;
+}
+
+/*Estilização do BANNER abaixo do header*/
+.banner {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+}
+
+/*Estilização da sessão SOBRE NÓS*/
+.sobre_nos {
+    margin: 0;
+    text-align: justify;
+    width: 70%;
+    margin-left: 15%;
+    background-color: #e5e5e8;
+}
+.img_sobrenos {
+    width: 15%;
+    float: left;
+    margin-right: 20px;
+}
+.titulo_sobrenos {
+    text-align: center;
+    clear: left;
+}
+/*Estilização da sessão NOSSO ESTABELECIMENTO*/
+.mapaGeral {
+    background: linear-gradient(#e5e5e8,#a0a0aa);
+}
+.mapaGeral p{
+    text-align: center;
+}
+.mapa {
+    margin-left: 20%;
+}
+/*Estilização da sessão NOSSOS PRODUTOS*/
+.nossosprodutos{
+    padding: 2%;
+    background: linear-gradient(#a0a0aa, rgb(108, 108, 124));
+}
+.div_nossosprodutos{
+    width: 70%;
+    margin-left: 30%;
+}
+.lista_nossosprodutos{
+    width: 30%;
+    display: inline-block;
+    vertical-align: "top";
+    list-style: none;
+}
+.lista_nossosprodutos li{
+    line-height: 2;
+}
+.lista_nossosprodutos li:before{
+    content: "➤ ";
+}
+.img_nossosprodutos{
+    width: 15%;
+    border-radius: 8px;
+    box-shadow: 10px 10px 5px 0px #000000;
+    opacity: 1;
+    transition: 400ms;
+}
+.img_nossosprodutos:hover{
+    opacity: 0.5;
+}
+
+/*Estilização Vídeo*/
+.video{
+    
+    align-items: center;      /* Centralizar horizontalmente */
+    justify-content: center;  /* Centralizar verticalmente */
+    text-align: center;       /* Centraliza o texto */
+    /*height: 100vh;            /* Altura da tela inteira para centralizar verticalmente */
+    /* bottom: 40;*/
+   
+    
+}
+
+.video iframe {
+    margin-top: 10px;         /* Adiciona um pequeno espaço entre o título e o vídeo */
+}
+/*Estilização do Footer*/
+footer{
+    background: url("rodape.jpg");
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0,0,0,0.6);
+    background-blend-mode: darken;
+    padding: 30px 10px 10px 0;
+       
+}
+footer p{
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+footer i{
+    color: white;
+}
+.logo_footer{
+    width: 12%;
+    padding-left: 45%;
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detalhes do Produto | HyperMech</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="css/estilos_produtos.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    .pop {
+      max-width: 800px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .pop h1 {
+      font-size: 28px;
+      color: #152046;
+      margin-bottom: 20px;
+    }
+
+    .slider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      position: relative;
+    }
+
+    .slider img {
+      max-width: 100%;
+      max-height: 400px;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .slider button {
+      background-color: #152046;
+      color: white;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 50%;
+      font-size: 22px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .slider button:hover {
+      background-color: #1c2b5c;
+    }
+
+    #descricao-produto {
+      margin-top: 25px;
+      font-size: 16px;
+      line-height: 1.6;
+      text-align: justify;
+      color: #444;
+    }
+
+    @media (max-width: 600px) {
+      .pop {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      .slider {
+        flex-direction: column;
+      }
+
+      .slider button {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="pop">
+      <h1 id="nome-produto">Produto</h1>
+
+      <div class="slider">
+        <button id="prevBtn">&#10094;</button>
+        <img id="slider-img" src="" alt="Imagem do produto" />
+        <button id="nextBtn">&#10095;</button>
+      </div>
+
+      <p id="descricao-produto"></p>
+    </div>
+  </main>
+
+  <script>
+    function getParametro(nome) {
+      const params = new URLSearchParams(window.location.search);
+      return params.get(nome);
+    }
+
+    const nome = getParametro("nome");
+    const imagemPrincipal = getParametro("imagem");
+    const descricao = getParametro("descricao");
+
+    document.getElementById("nome-produto").innerText = nome || "Produto";
+    document.getElementById("descricao-produto").innerText = descricao || "Descrição indisponível.";
+
+    const imagens = JSON.parse(localStorage.getItem("sliderImgs") || "[]");
+    let index = 0;
+    const imgEl = document.getElementById("slider-img");
+
+    if (imagens.length > 0) {
+      imgEl.src = imagens[0];
+    } else if (imagemPrincipal) {
+      imgEl.src = imagemPrincipal;
+    }
+
+    document.getElementById("prevBtn").addEventListener("click", () => {
+      if (imagens.length > 0) {
+        index = (index - 1 + imagens.length) % imagens.length;
+        imgEl.src = imagens[index];
+      }
+    });
+
+    document.getElementById("nextBtn").addEventListener("click", () => {
+      if (imagens.length > 0) {
+        index = (index + 1) % imagens.length;
+        imgEl.src = imagens[index];
+      }
+    });
+  </script>
+</body>
+</html>

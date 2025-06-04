@@ -1,0 +1,338 @@
+/* Reset e estilo base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #e5e5e8;
+  color: #333;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Header */
+header {
+  background-color: #152046;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 30px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  width: 160px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 2.1rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav li a:hover {
+  color: #1a8cff;
+}
+
+/* Banner */
+.banner {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  
+}
+
+/* Sobre Nós */
+.sobre_nos {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+ 
+}
+
+.titulo_sobrenos {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #152046;
+  
+}
+
+.img_sobrenos {
+  width: 150px;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+.sobre_nos p {
+  text-align: justify;
+  margin-bottom: 15px;
+  
+  }
+
+/* Estabelecimento */
+.mapaGeral {
+  background: linear-gradient(#e5e5e8, #a0a0aa);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.mapa iframe {
+  width: 90%;
+  max-width: 900px;
+  height: 450px;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Nossos Produtos */
+.nossosprodutos {
+  background: linear-gradient(#a0a0aa, #6c6c7c);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.div_nossosprodutos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.lista_nossosprodutos {
+  list-style: none;
+  text-align: left;
+  font-size: 1.1rem;
+}
+
+.lista_nossosprodutos li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.lista_nossosprodutos li::before {
+  content: "\279C";
+  position: absolute;
+  left: 0;
+  color: #fff;
+}
+
+.img_nossosprodutos {
+    width: 20%;
+    border-radius: 8px; /* opcional — pode remover se quiser cantos retos */
+    box-shadow: none; /* remove a sombra */
+    border: none; /* garante que não haja borda */
+    opacity: 1;
+    transition: 400ms;
+}
+.img_nossosprodutos:hover {
+  opacity: 0.7;
+}
+
+.video {
+  margin-top: 30px;
+}
+
+.video iframe {
+  width: 100%;
+  max-width: 560px;
+  height: 315px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+footer {
+  background: url("img/rodape.jpg") center/cover no-repeat;
+  background-color: rgba(0, 0, 0, 0.7);
+  background-blend-mode: darken;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+footer p {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+footer i {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 1.2rem;
+}
+
+.logo_footer {
+  width: 120px;
+  margin: 0 auto;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .div_nossosprodutos {
+    flex-direction: column;
+  }
+
+  .lista_nossosprodutos,
+  .img_nossosprodutos {
+    width: 100%;
+    text-align: center;
+  }
+
+  .img_sobrenos {
+    float: none;
+    display: block;
+    margin: 0 auto 20px auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .titulo_sobrenos {
+    font-size: 1.5rem;
+  }
+
+  nav li a {
+    font-size: 1rem;
+  }
+
+  .lista_nossosprodutos li {
+    font-size: 1rem;
+  }
+}
+
+.contato {
+  background-color: #f2f2f2;
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 40px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.formulario-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formulario-contato label {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.formulario-contato input[type="text"],
+.formulario-contato input[type="email"],
+.formulario-contato input[type="tel"],
+.formulario-contato textarea,
+.formulario-contato select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+}
+
+fieldset label {
+  margin-right: 20px;
+}
+
+.novidades {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+button[type="submit"] {
+  padding: 12px;
+  font-size: 1.1rem;
+  background-color: #152046;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: fit-content;
+  align-self: flex-start;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #1e2b5a;
+}
+
+.formulario-contato {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.formulario-contato label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.formulario-contato input[type="text"],
+.formulario-contato input[type="email"],
+.formulario-contato input[type="tel"],
+.formulario-contato textarea,
+.formulario-contato select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.formulario-contato button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #152046;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.formulario-contato button:hover {
+  background: #1e2a6a;
+}

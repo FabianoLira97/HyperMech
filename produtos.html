@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Produtos</title>
+
+    <!-- Mantém o CSS original do seu primeiro código para header e footer -->
+    <link href="css/estilos_produtos.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <style>
+      /* Estilos do corpo e cards baseados no segundo código (com ajustes para evitar conflito) */
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f6fc;
+        margin: 0;
+        padding: 20px;
+        color: #333;
+      }
+
+      main {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      h1.produtos-titulo {
+        text-align: center;
+        margin-top: 40px;
+        color: #152046;
+      }
+
+      p.texto-produtos {
+        max-width: 700px;
+        margin: 20px auto 40px;
+        line-height: 1.5;
+        color: #555;
+        text-align: center;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        padding: 0 10px 40px;
+      }
+
+      .card {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        width: 220px;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        text-align: center;
+      }
+
+      .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      }
+
+      .card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 5px;
+        margin-bottom: 12px;
+      }
+
+      .card h2 {
+        font-size: 1.2rem;
+        color: #152046;
+        margin-bottom: 8px;
+      }
+
+      .card p {
+        font-size: 0.9rem;
+        color: #555;
+        margin-bottom: 12px;
+      }
+
+      .card .preco {
+        font-weight: bold;
+        font-size: 1.1rem;
+        color: #1a8cff;
+      }
+    </style>
+
+    <script>
+      // Função para abrir detalhes do produto (ajustada para abrir em nova janela como no original)
+      function abrirDetalhes(nome, imagemPrincipal, descricao, imagensSlider = []) {
+        localStorage.setItem('sliderImgs', JSON.stringify(imagensSlider));
+        const url = `pop_produtos.html?nome=${encodeURIComponent(nome)}&imagem=${encodeURIComponent(imagemPrincipal)}&descricao=${encodeURIComponent(descricao)}`;
+        window.open(url, '_blank', 'width=800,height=700');
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Header original mantido -->
+    <header>
+      <div class="divHeader">
+        <img src="img/Logo.png" title="HyperMech" class="logo" />
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <h1 class="produtos-titulo">🛒 Produtos</h1>
+      <p class="texto-produtos">
+        Trabalhamos com produtos sob encomenda ou à pronta entrega, sempre alinhados às necessidades do seu projeto.<br /><br />
+        Oferecemos flexibilidade na escolha de cores e configurações, sempre respeitando as especificações da linha e a disponibilidade dos fabricantes.<br /><br />
+        Em caso de dúvidas ou necessidade de suporte técnico, nossa equipe está à disposição para auxiliá-lo!
+      </p>
+
+      <div class="container">
+        <!-- Cards dos produtos adaptados do seu código original com os estilos do segundo -->
+
+        <div class="card" onclick="abrirDetalhes(
+          'CLP Siemens Logo! 24CE – 6ED1052-1CC08-0BA2',
+          'img/Produtos/Produto1_A.png',
+          '24VCC, com 8 entradas digitais e 4 saídas digitais. Compacto, eficiente e ideal para automações simples e confiáveis.',
+          [
+            'img/Produtos/Produto1_B.png',
+            'img/Produtos/Produto1_C.png',
+            'img/Produtos/Produto1_D.png'
+          ]
+        )">
+          <img src="img/Produtos/Produto1_A.png" alt="Produto 1" />
+          <h2>CLP Siemens</h2>
+          <p> Com suporte a comunicação Ethernet</p>
+          <span class="preco">R$ 925,66</span>
+        </div>
+
+        <div class="card" onclick="abrirDetalhes(
+          'Fonte Sitop Psu200M',
+          'img/Produtos/Produto2_A.jpg',
+          'Opera com tensão de entrada ampla (120/230 VCA ou 230/500 VCA, monofásica ou bifásica) e fornece saída estabilizada de 24 VCC / 5 A.',
+          [
+            'img/Produtos/Produto2_A.jpg',
+            'img/Produtos/Produto2_B.jpg',
+            'img/Produtos/Produto2_C.jpg'
+          ]
+        )">
+          <img src="img/Produtos/Produto2_A.jpg" alt="Produto 2" />
+          <h2>Fonte Siemens</h2>
+          <p>Fonte industrial de alta confiabilidade</p>
+          <span class="preco">R$ 1.778,90</span>
+        </div>
+
+        <div class="card" onclick="abrirDetalhes(
+          'Motor Elétrico WEG W22 IR3 Premium',
+          'img/produtos/produto03.jpg',
+          'Solução robusta, eficiente e confiável para aplicações industriais que exigem alto desempenho e economia de energia.',
+          [
+            'img/Produtos/Produto3_A.png',
+            'img/Produtos/Produto3_B.png',
+            'img/Produtos/Produto3_C.png'
+          ]
+        )">
+          <img src="img/Produtos/Produto3_A.png" alt="Produto 3" />
+          <h2>Motor WEG</h2>
+          <p>Motor elétrico trifásico W22 Premium da WEG3</p>
+          <span class="preco">R$ 1.826,99</span>
+        </div>
+
+        <div class="card" onclick="abrirDetalhes(
+          'Nobreak Home Monofásico WEG 600VA',
+          'img/Produtos/Produto4_A.png',
+          'Solução prática e segura para manter seus dispositivos eletrônicos funcionando mesmo diante de instabilidades na rede elétrica.',
+          [
+            'img/Produtos/Produto4_A.png',
+            'img/Produtos/Produto4_B.png',
+            'img/Produtos/Produto4_C.png'
+          ]
+        )">
+          <img src="img/Produtos/Produto4_A.png" alt="Produto 4" />
+          <h2>Nobreak WEG</h2>
+          <p>Autonomia suficiente para desligamento seguro de computadores</p>
+          <span class="preco">R$ 427,49</span>
+        </div>
+
+        <div class="card" onclick="abrirDetalhes(
+          ' Chave de Partida Softstarter ABB PSTX45-600-70',
+          'img/Produtos/Produto5_A.jpg',
+          'Solução moderna e eficiente para o controle de partida e parada suave de motores trifásicos. Com capacidade de corrente de 45A e potência de até 32 kW, essa softstarter é ideal para aplicações industriais que demandam alto desempenho, proteção e confiabilidade.',
+          [
+            'img/Produtos/Produto5_A.jpg',
+            'img/Produtos/Produto5_B.jpg',
+            'img/Produtos/Produto5_C.jpg'
+          ]
+        )">
+          <img src="img/Produtos/Produto5_A.jpg" alt="Produto 5" />
+          <h2> Softstarter ABB </h2>
+          <p>Compacta, fácil de instalar e programar</p>
+          <span class="preco">R$ 3.103,90</span>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer original mantido -->
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2025 HyperMech. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+  </body>
+</html>
